@@ -10,6 +10,7 @@ A modern, professional portfolio website built with HTML, CSS, and JavaScript. T
 - **Portfolio filtering** - Filter projects by category
 - **Contact Form** - Fully functional contact form with validation
 - **Mobile Navigation** - Hamburger menu for mobile devices
+- **Multi-language Support** - English and French content with a simple language toggle
 - **Accessibility** - Semantic HTML and keyboard navigation support
 
 ## Sections

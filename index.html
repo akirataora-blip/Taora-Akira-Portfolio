@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en","fr"></html>>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +14,16 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">Taora Akira</div>
+            <div class="lang-switcher" id="langSwitcher" aria-label="Language switch">
+                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+            </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -33,12 +37,12 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm Taora Akira</h1>
-                <p class="hero-subtitle">Creative Designer & Developer | Bringing Ideas to Life</p>
-                <p class="hero-description">Welcome to my portfolio. I specialize in creating beautiful, functional digital experiences that tell compelling stories.</p>
+                <h1 class="hero-title" data-i18n="hero.title">Hi, I'm Taora Akira</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Creative Designer & Developer | Bringing Ideas to Life</p>
+                <p class="hero-description" data-i18n="hero.description">Welcome to my portfolio. I specialize in creating beautiful, functional digital experiences that tell compelling stories.</p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#portfolio" class="btn btn-primary" data-i18n="hero.ctaWork">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaContact">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -50,23 +54,23 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate designer and developer with a love for creating digital products that make a difference. With expertise in both design and development, I bridge the gap between aesthetics and functionality.</p>
-                    <p>My approach combines strategic thinking, creative problem-solving, and technical excellence to deliver results that exceed expectations.</p>
+                    <p data-i18n="about.p1">I'm a passionate designer and developer with a love for creating digital products that make a difference. With expertise in both design and development, I bridge the gap between aesthetics and functionality.</p>
+                    <p data-i18n="about.p2">My approach combines strategic thinking, creative problem-solving, and technical excellence to deliver results that exceed expectations.</p>
                     <div class="about-stats">
                         <div class="stat">
                             <h3>50+</h3>
-                            <p>Projects Completed</p>
+                            <p data-i18n="about.stats.projects">Projects Completed</p>
                         </div>
                         <div class="stat">
                             <h3>30+</h3>
-                            <p>Happy Clients</p>
+                            <p data-i18n="about.stats.clients">Happy Clients</p>
                         </div>
                         <div class="stat">
                             <h3>5+</h3>
-                            <p>Years Experience</p>
+                            <p data-i18n="about.stats.years">Years Experience</p>
                         </div>
                     </div>
                 </div>
@@ -86,12 +90,12 @@
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="section-title">My Portfolio</h2>
+            <h2 class="section-title" data-i18n="portfolio.title">My Portfolio</h2>
             <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="design">Design</button>
-                <button class="filter-btn" data-filter="development">Development</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filters.all">All</button>
+                <button class="filter-btn" data-filter="design" data-i18n="portfolio.filters.design">Design</button>
+                <button class="filter-btn" data-filter="development" data-i18n="portfolio.filters.development">Development</button>
+                <button class="filter-btn" data-filter="branding" data-i18n="portfolio.filters.branding">Branding</button>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="design">
@@ -99,9 +103,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Modern UI Design System</h3>
-                        <p>A comprehensive design system featuring clean components and intuitive user interfaces.</p>
-                        <span class="category-tag">Design</span>
+                        <h3 data-i18n="portfolio.projects.uiTitle">Modern UI Design System</h3>
+                        <p data-i18n="portfolio.projects.uiDesc">A comprehensive design system featuring clean components and intuitive user interfaces.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.uiCategory">Design</span>
                     </div>
                 </div>
 
@@ -110,9 +114,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>A full-stack e-commerce solution with payment integration and real-time inventory management.</p>
-                        <span class="category-tag">Development</span>
+                        <h3 data-i18n="portfolio.projects.ecomTitle">E-commerce Platform</h3>
+                        <p data-i18n="portfolio.projects.ecomDesc">A full-stack e-commerce solution with payment integration and real-time inventory management.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.ecomCategory">Development</span>
                     </div>
                 </div>
 
@@ -121,9 +125,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Brand Identity Package</h3>
-                        <p>Complete branding solution including logo, color palette, and brand guidelines.</p>
-                        <span class="category-tag">Branding</span>
+                        <h3 data-i18n="portfolio.projects.brandTitle">Brand Identity Package</h3>
+                        <p data-i18n="portfolio.projects.brandDesc">Complete branding solution including logo, color palette, and brand guidelines.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.brandCategory">Branding</span>
                     </div>
                 </div>
 
@@ -132,9 +136,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Mobile App Interface</h3>
-                        <p>Beautifully crafted mobile application with focus on user experience.</p>
-                        <span class="category-tag">Design</span>
+                        <h3 data-i18n="portfolio.projects.mobileTitle">Mobile App Interface</h3>
+                        <p data-i18n="portfolio.projects.mobileDesc">Beautifully crafted mobile application with focus on user experience.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.mobileCategory">Design</span>
                     </div>
                 </div>
 
@@ -143,9 +147,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Web Analytics Dashboard</h3>
-                        <p>Interactive dashboard for real-time data visualization and analysis.</p>
-                        <span class="category-tag">Development</span>
+                        <h3 data-i18n="portfolio.projects.dashboardTitle">Web Analytics Dashboard</h3>
+                        <p data-i18n="portfolio.projects.dashboardDesc">Interactive dashboard for real-time data visualization and analysis.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.dashboardCategory">Development</span>
                     </div>
                 </div>
 
@@ -154,9 +158,9 @@
                         <div class="image-placeholder-large"></div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Marketing Campaign</h3>
-                        <p>Integrated campaign design across multiple digital and print channels.</p>
-                        <span class="category-tag">Branding</span>
+                        <h3 data-i18n="portfolio.projects.campaignTitle">Marketing Campaign</h3>
+                        <p data-i18n="portfolio.projects.campaignDesc">Integrated campaign design across multiple digital and print channels.</p>
+                        <span class="category-tag" data-i18n="portfolio.projects.campaignCategory">Branding</span>
                     </div>
                 </div>
             </div>
@@ -166,42 +170,42 @@
     <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>Design</h3>
+                    <h3 data-i18n="skills.design.title">Design</h3>
                     <ul>
-                        <li>UI/UX Design</li>
-                        <li>Figma & Adobe Suite</li>
-                        <li>Wireframing</li>
-                        <li>Prototyping</li>
+                        <li data-i18n="skills.design.item1">UI/UX Design</li>
+                        <li data-i18n="skills.design.item2">Figma & Adobe Suite</li>
+                        <li data-i18n="skills.design.item3">Wireframing</li>
+                        <li data-i18n="skills.design.item4">Prototyping</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Development</h3>
+                    <h3 data-i18n="skills.development.title">Development</h3>
                     <ul>
-                        <li>HTML/CSS/JavaScript</li>
-                        <li>React & Vue.js</li>
-                        <li>Node.js & Express</li>
-                        <li>Database Design</li>
+                        <li data-i18n="skills.development.item1">HTML/CSS/JavaScript</li>
+                        <li data-i18n="skills.development.item2">React & Vue.js</li>
+                        <li data-i18n="skills.development.item3">Node.js & Express</li>
+                        <li data-i18n="skills.development.item4">Database Design</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Tools & Tech</h3>
+                    <h3 data-i18n="skills.tools.title">Tools & Tech</h3>
                     <ul>
-                        <li>Git & GitHub</li>
-                        <li>Docker & DevOps</li>
-                        <li>REST APIs</li>
-                        <li>AWS & Cloud Services</li>
+                        <li data-i18n="skills.tools.item1">Git & GitHub</li>
+                        <li data-i18n="skills.tools.item2">Docker & DevOps</li>
+                        <li data-i18n="skills.tools.item3">REST APIs</li>
+                        <li data-i18n="skills.tools.item4">AWS & Cloud Services</li>
                     </ul>
                 </div>
                 <div class="skill-card">
-                    <h3>Soft Skills</h3>
+                    <h3 data-i18n="skills.soft.title">Soft Skills</h3>
                     <ul>
-                        <li>Project Management</li>
-                        <li>Team Leadership</li>
-                        <li>Communication</li>
-                        <li>Creative Problem-Solving</li>
+                        <li data-i18n="skills.soft.item1">Project Management</li>
+                        <li data-i18n="skills.soft.item2">Team Leadership</li>
+                        <li data-i18n="skills.soft.item3">Communication</li>
+                        <li data-i18n="skills.soft.item4">Creative Problem-Solving</li>
                     </ul>
                 </div>
             </div>
@@ -211,46 +215,46 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Have a project in mind? I'd love to hear about it. Let's create something amazing together!</p>
+            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Have a project in mind? I'd love to hear about it. Let's create something amazing together!</p>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>Email</h3>
+                        <h3 data-i18n="contact.emailLabel">Email</h3>
                         <p><a href="mailto:hello@taoraakirax.com">hello@taoraakirax.com</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>Phone</h3>
+                        <h3 data-i18n="contact.phoneLabel">Phone</h3>
                         <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
                     </div>
                     <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>Creative Hub, Digital City</p>
+                        <h3 data-i18n="contact.locationLabel">Location</h3>
+                        <p data-i18n="contact.locationValue">Creative Hub, Digital City</p>
                     </div>
                     <div class="contact-item">
-                        <h3>Follow Me</h3>
+                        <h3 data-i18n="contact.followLabel">Follow Me</h3>
                         <div class="social-links">
-                            <a href="#" class="social-icon">LinkedIn</a>
-                            <a href="#" class="social-icon">GitHub</a>
-                            <a href="#" class="social-icon">Twitter</a>
-                            <a href="#" class="social-icon">Instagram</a>
+                            <a href="#" class="social-icon" data-i18n="contact.social.linkedin">LinkedIn</a>
+                            <a href="#" class="social-icon" data-i18n="contact.social.github">GitHub</a>
+                            <a href="#" class="social-icon" data-i18n="contact.social.twitter">Twitter</a>
+                            <a href="#" class="social-icon" data-i18n="contact.social.instagram">Instagram</a>
                         </div>
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" placeholder="Your Name" data-i18n-placeholder="contact.form.name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.form.email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea placeholder="Your Message" data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
                 </form>
             </div>
         </div>
@@ -259,8 +263,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Taora Akira. All rights reserved.</p>
-            <p>Designed & Built with passion</p>
+            <p data-i18n="footer.copy">&copy; 2026 Taora Akira. All rights reserved.</p>
+            <p data-i18n="footer.madeWith">Designed &amp; Built with passion</p>
         </div>
     </footer>
 
