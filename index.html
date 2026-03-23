@@ -3,273 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taora Akira - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Portfolio</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">Taora Akira</div>
-            <div class="lang-switcher" id="langSwitcher" aria-label="Language switch">
-                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
-                <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" data-i18n="nav.home">Home</a></li>
-                <li><a href="#about" data-i18n="nav.about">About</a></li>
-                <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
-                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <h1>My Portfolio</h1>
+
+    <div id="portfolio">
+        <h2>Portfolio Images</h2>
+        <div class="image-upload-manager">
+            <input type="file" id="imageUpload" accept="image/*" multiple />
+            <button onclick="uploadImages()">Upload Images</button>
         </div>
-    </nav>
+        <div id="imagesContainer"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" data-i18n="hero.title">Hi, I'm Taora Akira</h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle"> Freelance | Étudiante en Master 1 à la BSB Lyon |Creative Designer & Developer </p>
-                <p class="hero-description" data-i18n="hero.description">Welcome to my portfolio. I specialize in creating beautiful, functional digital experiences that tell compelling stories.</p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary" data-i18n="hero.ctaWork">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaContact">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-shape"></div>
-            </div>
-        </div>
-    </section>
+    <script>
+        function uploadImages() {
+            const files = document.getElementById('imageUpload').files;
+            const container = document.getElementById('imagesContainer');
+            container.innerHTML = ''; // Clear previous images
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about.title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-i18n="about.p1">From Tahiti to Lyon, my journey has been a dynamic personal and professional adventure. Currently in my first year of a Master’s degree at the Burgundy School of Business, I am experiencing an exciting period of personal development and new connections.
-
-Versatility is my strength, and I am seeking practical experience in dynamic environments. My long-term goal is clear: to put everything I learn towards setting up my own business in French Polynesia. To achieve this, I want to learn from others, exchange ideas and collaborate.</p>
-                    <p data-i18n="about.p2">I invite you to take a look at my profile! I’m open to dialogue and firmly believe that, hand in hand, we can build something wonderful together for a meaningful professional future. </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>50+</h3>
-                            <p data-i18n="about.stats.projects">Projects Completed</p>
-                        </div>
-                        <div class="stat">
-                            <h3>30+</h3>
-                            <p data-i18n="about.stats.clients">Happy Clients</p>
-                        </div>
-                        <div class="stat">
-                            <h3>5+</h3>
-                            <p data-i18n="about.stats.years">Years Experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="100" cy="100" r="95" fill="none" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="100" cy="80" r="30" fill="currentColor"/>
-                            <path d="M 70 120 Q 70 140 100 140 Q 130 140 130 120" fill="currentColor"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section-title" data-i18n="portfolio.title">My Portfolio</h2>
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all" data-i18n="portfolio.filters.all">All</button>
-                <button class="filter-btn" data-filter="design" data-i18n="portfolio.filters.design">Design</button>
-                <button class="filter-btn" data-filter="development" data-i18n="portfolio.filters.development">Development</button>
-                <button class="filter-btn" data-filter="branding" data-i18n="portfolio.filters.branding">Branding</button>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.uiTitle">Modern UI Design System</h3>
-                        <p data-i18n="portfolio.projects.uiDesc">A comprehensive design system featuring clean components and intuitive user interfaces.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.uiCategory">Design</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="development">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.ecomTitle">E-commerce Platform</h3>
-                        <p data-i18n="portfolio.projects.ecomDesc">A full-stack e-commerce solution with payment integration and real-time inventory management.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.ecomCategory">Development</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.brandTitle">Brand Identity Package</h3>
-                        <p data-i18n="portfolio.projects.brandDesc">Complete branding solution including logo, color palette, and brand guidelines.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.brandCategory">Branding</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.mobileTitle">Mobile App Interface</h3>
-                        <p data-i18n="portfolio.projects.mobileDesc">Beautifully crafted mobile application with focus on user experience.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.mobileCategory">Design</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="development">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.dashboardTitle">Web Analytics Dashboard</h3>
-                        <p data-i18n="portfolio.projects.dashboardDesc">Interactive dashboard for real-time data visualization and analysis.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.dashboardCategory">Development</span>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="branding">
-                    <div class="portfolio-image">
-                        <div class="image-placeholder-large"></div>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3 data-i18n="portfolio.projects.campaignTitle">Marketing Campaign</h3>
-                        <p data-i18n="portfolio.projects.campaignDesc">Integrated campaign design across multiple digital and print channels.</p>
-                        <span class="category-tag" data-i18n="portfolio.projects.campaignCategory">Branding</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3 data-i18n="skills.design.title">Design</h3>
-                    <ul>
-                        <li data-i18n="skills.design.item1">UI/UX Design</li>
-                        <li data-i18n="skills.design.item2">Figma & Adobe Suite</li>
-                        <li data-i18n="skills.design.item3">Wireframing</li>
-                        <li data-i18n="skills.design.item4">Prototyping</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills.development.title">Development</h3>
-                    <ul>
-                        <li data-i18n="skills.development.item1">HTML/CSS/JavaScript</li>
-                        <li data-i18n="skills.development.item2">React & Vue.js</li>
-                        <li data-i18n="skills.development.item3">Node.js & Express</li>
-                        <li data-i18n="skills.development.item4">Database Design</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills.tools.title">Tools & Tech</h3>
-                    <ul>
-                        <li data-i18n="skills.tools.item1">Git & GitHub</li>
-                        <li data-i18n="skills.tools.item2">Docker & DevOps</li>
-                        <li data-i18n="skills.tools.item3">REST APIs</li>
-                        <li data-i18n="skills.tools.item4">AWS & Cloud Services</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3 data-i18n="skills.soft.title">Soft Skills</h3>
-                    <ul>
-                        <li data-i18n="skills.soft.item1">Project Management</li>
-                        <li data-i18n="skills.soft.item2">Team Leadership</li>
-                        <li data-i18n="skills.soft.item3">Communication</li>
-                        <li data-i18n="skills.soft.item4">Creative Problem-Solving</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
-            <p class="section-subtitle" data-i18n="contact.subtitle">Have a project in mind? I'd love to hear about it. Let's create something amazing together!</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3 data-i18n="contact.emailLabel">Email</h3>
-                        <p><a href="mailto:hello@taoraakirax.com">hello@taoraakirax.com</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3 data-i18n="contact.phoneLabel">Phone</h3>
-                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3 data-i18n="contact.locationLabel">Location</h3>
-                        <p data-i18n="contact.locationValue">Creative Hub, Digital City</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3 data-i18n="contact.followLabel">Follow Me</h3>
-                        <div class="social-links">
-                            <a href="#" class="social-icon" data-i18n="contact.social.linkedin">LinkedIn</a>
-                            <a href="#" class="social-icon" data-i18n="contact.social.github">GitHub</a>
-                            <a href="#" class="social-icon" data-i18n="contact.social.twitter">Twitter</a>
-                            <a href="#" class="social-icon" data-i18n="contact.social.instagram">Instagram</a>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" data-i18n-placeholder="contact.form.name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" data-i18n-placeholder="contact.form.email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p data-i18n="footer.copy">&copy; 2026 Taora Akira. All rights reserved.</p>
-            <p data-i18n="footer.madeWith">Designed &amp; Built with passion</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+            for (const file of files) {
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.alt = file.name;
+                img.style.width = '200px'; // Set a width for the images
+                img.style.margin = '10px';
+                container.appendChild(img);
+            }
+        }
+    </script>
 </body>
 </html>
