@@ -4,33 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>My Portfolio</h1>
-
-    <div id="portfolio">
-        <h2>Portfolio Images</h2>
-        <div class="image-upload-manager">
-            <input type="file" id="imageUpload" accept="image/*" multiple />
-            <button onclick="uploadImages()">Upload Images</button>
+    <header class="hero">
+        <h1>Your Name</h1>
+        <p>A short description of who you are and what you do.</p>
+        <button>Contact Me</button>
+    </header>
+    <section class="about">
+        <h2>About Me</h2>
+        <p>A brief introduction about yourself, your background, and what you're passionate about.</p>
+    </section>
+    <section class="experience">
+        <h2>Experience</h2>
+        <div class="experience-cards">
+            <div class="card">
+                <h3>Job Title</h3>
+                <img src="uploads/job1.jpg" alt="Job 1 Image">
+                <p>Company Name - Duration</p>
+                <input type="file" accept="image/*" onchange="uploadImage('job1')">
+            </div>
+            <div class="card">
+                <h3>Job Title</h3>
+                <img src="uploads/job2.jpg" alt="Job 2 Image">
+                <p>Company Name - Duration</p>
+                <input type="file" accept="image/*" onchange="uploadImage('job2')">
+            </div>
+            <!-- Add more cards as needed -->
         </div>
-        <div id="imagesContainer"></div>
-    </div>
-
+    </section>
+    <section class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+            <!-- Add more skills as needed -->
+        </ul>
+    </section>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
     <script>
-        function uploadImages() {
-            const files = document.getElementById('imageUpload').files;
-            const container = document.getElementById('imagesContainer');
-            container.innerHTML = ''; // Clear previous images
-
-            for (const file of files) {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(file);
-                img.alt = file.name;
-                img.style.width = '200px'; // Set a width for the images
-                img.style.margin = '10px';
-                container.appendChild(img);
-            }
+        function uploadImage(job) {
+            const input = document.querySelector(`input[type='file'][onchange*='${job}']`);
+            const file = input.files[0];
+            // Implement image upload logic (e.g., upload to a server)
         }
     </script>
 </body>
